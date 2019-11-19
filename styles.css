@@ -1,0 +1,225 @@
+:root {
+    --table-User--color: white;
+    --table-IA--color: white;
+    --celda-seleccionada: ;
+    --celda-golpeada: ;
+}
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+/* MAIN CONTAINER */
+.main-container {
+    background-color: lightgrey;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: "panel board score";
+    grid-template-columns: 200px 1fr 200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+/* PANEL */
+.panel {
+    grid-area: panel;
+    background-color: #62715F;
+    width: 100%;
+}
+.panel-container {
+    width: 80%;
+    background-color: green;
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/*** BOARDS ***/
+
+/* USER BOARD */
+.boards {
+    grid-area: board;
+    width: 100%;
+    position:relative;
+    
+}
+.board {
+    outline:2px solid red;
+    width: 100%;
+    height: 90%;
+    position: relative;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+} /*Shared class*/
+
+/* USER TABLE */
+.main-table-user {
+    width:270px;
+    max-height:270px;
+    margin:0 auto;
+    border-collapse: collapse;
+}
+
+.cell {
+    background-color: var(--table-User--color);
+    width: 30px;
+    height: 30px;
+    border:1px solid lightgrey;
+}
+.cell:hover {
+    background-color: #2667C6;
+}
+
+/*IA TABLE*/
+.main-table-IA {
+    width:270px;
+    margin:0 auto;
+    position:relative;
+    border-collapse: collapse;
+}
+.hide-block::after {
+    content: "BLOCKED";
+    background-color: rgba(255,255,255,0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* SCORE */
+.score {
+    grid-area: score;
+    background-color: #62715F;
+    width: 100%;
+}
+
+.infoframe {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.army-user-remain {
+    font-size: 2rem;
+    background-color: yellow;
+    height: 100px;
+}
+.guess {
+    background-color: salmon;
+    height: 30px;
+}
+.hits {
+    background-color: salmon;
+    height: 30px;
+
+}
+
+/* MINI CONTROLPANEL */
+.control-panel {
+    position:absolute;
+    left:50%;
+    transform:translatex(-50%);
+    margin-left:auto;
+    margin-right:auto;
+    background-color: orange;
+    width: 70%;
+    height: 30px;
+    display:flex;
+    flex-direction:row-reverse;
+    z-index:100;
+}
+.board-toggle {
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* SCOREPANEL */
+.scorePanel {
+    display:none;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+}
+.score-container {
+    background-color: salmon;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.reset {
+    margin-top:1rem;
+    padding:0.7rem 0.5rem;
+    width:100%;
+    background-color: red;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
+.reset:hover {
+    background-color: darkred;
+}
+/* HELPERS */
+.is-hidden {
+    display: none;
+}
+.is-visible {
+    display: block;
+}
+
+.stage{
+    background-color: red;
+    width: 100px;
+    height: auto;
+    z-index: 101;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.attack {
+    background-color: yellow; /*Cada ataque fallado de user*/
+}
+.ship {
+    background-color: cyan; /*Barcos user positionados*/
+}
+.ship-hit {
+    background-color: red; /*Hits*/
+}
+/* .ship-miss {
+    background-color: greenyellow; 
+} */
+.verde {
+    background-color: lime;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 650px) {
+    .board {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin:0 auto;
+
+    }
+    /* .main-table-user {
+    } */
+    .cell {
+        height:25px;
+        width: 20px;
+    }
+
+
+}

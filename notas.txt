@@ -1,0 +1,61 @@
+﻿**** CREACION DE ARMADA
+Se deben crear diferentes barcos con diferentes propiedades
+    1 acorazado: 3 espacios, 
+    3 buques: 2 espacios
+    5 barcos: 1 espacio
+
+**** Version 1.0 
+    Dar formato a todos los mensajes que entrega el juego 
+        Función única con opción de parámetros
+        Reemplazar todos los alert por este panel de mensajes
+        Insertar con appendChild y eliminar con setTimeOut
+    Crear hover con cuadros alrededor marcados
+        Debe depender de la bomba que se tirará (mas poderosa, mas cuadros)
+        Se deberá crear el hover con js
+    Terminar score screen con todos los datos finales
+    El score screen debe ser verde en victoria y rojo en derrota
+
+ARREGLAR 
+    Evitar el error al seleccionar el borde de la tabla User
+    Asegurar que no se pueda seleccionar celda 0 y celda 82
+    Y que puedan ser seleccionadas celda 1 y 81
+
+**** READY
+    Agregar boton de reset en score screen
+    No se debe poder elegir la misma celda en IA, solo celdas unicas
+    Ataque de IA - Crear sistema de turnos 
+    Marcar mi celda impactada por la IA
+    Descontar marcador de barcos en mi panel
+    Pintar las casillas que la IA ataca y falla (informar por document)
+
+Puntaje:
+    Intentos totales
+    Barcos del oponente hundidos 5/7
+    Barcos propios hundidos 2/7
+
+
+Datos del panel
+
+Panel User 
+    Barcos remanentes
+    Barcos propios hundidos
+
+Panel IA
+    Barcos destruidos
+
+Los barcos disponibles para el User estaran como iconos debajo al inicio, con cada eleccion se iran descontando y posicionando en el tablero. El contador ira incrementando con cada posicionamiento y se descontarán cada barco destruido.
+
+**** Version 2.0
+    Barcos de diferentes tamaños
+    Barcos de diferentes resistencias a ataques
+    Bombas con mayores alcances (pueden impactar a sus alrededores)
+    Inteligencia IA Mejorada (Mejorar la forma en que define los ataques basandose en la logica humana)
+
+**** Version 3.0
+    Agregar niveles de dificultad
+        No mostrar los lugares donde has atacado 
+    Barcos moviendose
+        Habilitar la opcion de poder mover un barco en tu turno
+
+**** Version 4.0
+    Multijugador

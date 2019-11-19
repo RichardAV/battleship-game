@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Battleship Game</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stage">
+        <div id="stage"></div>
+        <div id="IApanel"></div>
+    </div>
+    <main class="main-container">
+
+        <!-- PANEL -->
+        <section id="panel" class="panel">
+            <div class="panel-container">
+                <!-- <button id="btn-begin" class="btn">Begin</button> -->
+                <div class="infoframe army-user-remain" id="army-user-remain"></div>
+                <div class="infoframe hits" id="hits"></div>
+                <div class="infoframe guess" id="guess"></div>
+
+            </div>
+        </section>
+
+        
+        <!-- BOARDS COLUMN -->
+        <div class="boards">
+
+            <!-- MINI CONTROL PANEL
+            <section class="control-panel">
+                <div class="board-toggle" id="board-toggle"></div>
+            </section> -->
+
+            <!-- SECTION BOARDS -->
+            <section id="board" class="board">
+                
+                <!-- USER BOARD -->
+                <table id="main-table" class="main-table-user">
+                    <tr class="row">
+                        <td id="c1" class="cell"></td>
+                        <td id="c2" class="cell"></td>
+                        <td id="c3" class="cell"></td>
+                        <td id="c4" class="cell"></td>
+                        <td id="c5" class="cell"></td>
+                        <td id="c6" class="cell"></td>
+                        <td id="c7" class="cell"></td>
+                        <td id="c8" class="cell"></td>
+                        <td id="c9" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c10" class="cell"></td>
+                        <td id="c11" class="cell"></td>
+                        <td id="c12" class="cell"></td>
+                        <td id="c13" class="cell"></td>
+                        <td id="c14" class="cell"></td>
+                        <td id="c15" class="cell"></td>
+                        <td id="c16" class="cell"></td>
+                        <td id="c17" class="cell"></td>
+                        <td id="c18" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c19" class="cell"></td>
+                        <td id="c20" class="cell"></td>
+                        <td id="c21" class="cell"></td>
+                        <td id="c22" class="cell"></td>
+                        <td id="c23" class="cell"></td>
+                        <td id="c24" class="cell"></td>
+                        <td id="c25" class="cell"></td>
+                        <td id="c26" class="cell"></td>
+                        <td id="c27" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c28" class="cell"></td>
+                        <td id="c29" class="cell"></td>
+                        <td id="c30" class="cell"></td>
+                        <td id="c31" class="cell"></td>
+                        <td id="c32" class="cell"></td>
+                        <td id="c33" class="cell"></td>
+                        <td id="c34" class="cell"></td>
+                        <td id="c35" class="cell"></td>
+                        <td id="c36" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c37" class="cell"></td>
+                        <td id="c38" class="cell"></td>
+                        <td id="c39" class="cell"></td>
+                        <td id="c40" class="cell"></td>
+                        <td id="c41" class="cell"></td>
+                        <td id="c42" class="cell"></td>
+                        <td id="c43" class="cell"></td>
+                        <td id="c44" class="cell"></td>
+                        <td id="c45" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c46" class="cell"></td>
+                        <td id="c47" class="cell"></td>
+                        <td id="c48" class="cell"></td>
+                        <td id="c49" class="cell"></td>
+                        <td id="c50" class="cell"></td>
+                        <td id="c51" class="cell"></td>
+                        <td id="c52" class="cell"></td>
+                        <td id="c53" class="cell"></td>
+                        <td id="c54" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c55" class="cell"></td>
+                        <td id="c56" class="cell"></td>
+                        <td id="c57" class="cell"></td>
+                        <td id="c58" class="cell"></td>
+                        <td id="c59" class="cell"></td>
+                        <td id="c60" class="cell"></td>
+                        <td id="c61" class="cell"></td>
+                        <td id="c62" class="cell"></td>
+                        <td id="c63" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c64" class="cell"></td>
+                        <td id="c65" class="cell"></td>
+                        <td id="c66" class="cell"></td>
+                        <td id="c67" class="cell"></td>
+                        <td id="c68" class="cell"></td>
+                        <td id="c69" class="cell"></td>
+                        <td id="c70" class="cell"></td>
+                        <td id="c71" class="cell"></td>
+                        <td id="c72" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c73" class="cell"></td>
+                        <td id="c74" class="cell"></td>
+                        <td id="c75" class="cell"></td>
+                        <td id="c76" class="cell"></td>
+                        <td id="c77" class="cell"></td>
+                        <td id="c78" class="cell"></td>
+                        <td id="c79" class="cell"></td>
+                        <td id="c80" class="cell"></td>
+                        <td id="c81" class="cell"></td>
+                    </tr>
+                </table>
+                <!-- IA BOARD -->
+                <table id="main-table-IA" class="main-table-IA hide-block">
+                    <tr class="row">
+                        <td id="c1-IA" class="cell"></td>
+                        <td id="c2-IA" class="cell"></td>
+                        <td id="c3-IA" class="cell"></td>
+                        <td id="c4-IA" class="cell"></td>
+                        <td id="c5-IA" class="cell"></td>
+                        <td id="c6-IA" class="cell"></td>
+                        <td id="c7-IA" class="cell"></td>
+                        <td id="c8-IA" class="cell"></td>
+                        <td id="c9-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c10-IA" class="cell"></td>
+                        <td id="c11-IA" class="cell"></td>
+                        <td id="c12-IA" class="cell"></td>
+                        <td id="c13-IA" class="cell"></td>
+                        <td id="c14-IA" class="cell"></td>
+                        <td id="c15-IA" class="cell"></td>
+                        <td id="c16-IA" class="cell"></td>
+                        <td id="c17-IA" class="cell"></td>
+                        <td id="c18-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c19-IA" class="cell"></td>
+                        <td id="c20-IA" class="cell"></td>
+                        <td id="c21-IA" class="cell"></td>
+                        <td id="c22-IA" class="cell"></td>
+                        <td id="c23-IA" class="cell"></td>
+                        <td id="c24-IA" class="cell"></td>
+                        <td id="c25-IA" class="cell"></td>
+                        <td id="c26-IA" class="cell"></td>
+                        <td id="c27-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c28-IA" class="cell"></td>
+                        <td id="c29-IA" class="cell"></td>
+                        <td id="c30-IA" class="cell"></td>
+                        <td id="c31-IA" class="cell"></td>
+                        <td id="c32-IA" class="cell"></td>
+                        <td id="c33-IA" class="cell"></td>
+                        <td id="c34-IA" class="cell"></td>
+                        <td id="c35-IA" class="cell"></td>
+                        <td id="c36-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c37-IA" class="cell"></td>
+                        <td id="c38-IA" class="cell"></td>
+                        <td id="c39-IA" class="cell"></td>
+                        <td id="c40-IA" class="cell"></td>
+                        <td id="c41-IA" class="cell"></td>
+                        <td id="c42-IA" class="cell"></td>
+                        <td id="c43-IA" class="cell"></td>
+                        <td id="c44-IA" class="cell"></td>
+                        <td id="c45-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c46-IA" class="cell"></td>
+                        <td id="c47-IA" class="cell"></td>
+                        <td id="c48-IA" class="cell"></td>
+                        <td id="c49-IA" class="cell"></td>
+                        <td id="c50-IA" class="cell"></td>
+                        <td id="c51-IA" class="cell"></td>
+                        <td id="c52-IA" class="cell"></td>
+                        <td id="c53-IA" class="cell"></td>
+                        <td id="c54-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c55-IA" class="cell"></td>
+                        <td id="c56-IA" class="cell"></td>
+                        <td id="c57-IA" class="cell"></td>
+                        <td id="c58-IA" class="cell"></td>
+                        <td id="c59-IA" class="cell"></td>
+                        <td id="c60-IA" class="cell"></td>
+                        <td id="c61-IA" class="cell"></td>
+                        <td id="c62-IA" class="cell"></td>
+                        <td id="c63-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c64-IA" class="cell"></td>
+                        <td id="c65-IA" class="cell"></td>
+                        <td id="c66-IA" class="cell"></td>
+                        <td id="c67-IA" class="cell"></td>
+                        <td id="c68-IA" class="cell"></td>
+                        <td id="c69-IA" class="cell"></td>
+                        <td id="c70-IA" class="cell"></td>
+                        <td id="c71-IA" class="cell"></td>
+                        <td id="c72-IA" class="cell"></td>
+                    </tr>
+                    <tr class="row">
+                        <td id="c73-IA" class="cell"></td>
+                        <td id="c74-IA" class="cell"></td>
+                        <td id="c75-IA" class="cell"></td>
+                        <td id="c76-IA" class="cell"></td>
+                        <td id="c77-IA" class="cell"></td>
+                        <td id="c78-IA" class="cell"></td>
+                        <td id="c79-IA" class="cell"></td>
+                        <td id="c80-IA" class="cell"></td>
+                        <td id="c81-IA" class="cell"></td>
+                    </tr>
+                </table>
+
+            </section>
+
+            </section>
+            <!-- <section id="board-IA" class="board">
+            </section> -->
+        </div>
+
+        <!-- SCORE SECTION -->
+        <section id="score" class="score">
+        </section>
+
+    </main>
+
+    <!-- SCORE SCREEN FINAL -->
+    <section id="scorePanel" class="scorePanel">
+        <div class="score-container">
+            <p class="youWonLoose">You <span id="youWonLoose" ></span></p>
+            <p id="">Barcos hundidos enemigos <span id="enemySunkShips"></span></p>
+            <p id="">Barcos hundidos propios <span id="mySunkShips"></span></p>
+            <p id="">Ratio de éxito <span id="ratio"></span></p>
+            <button class="reset" id="reset">RELOAD</button>
+        </div>
+    </section>
+
+
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
